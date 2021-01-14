@@ -4,4 +4,4 @@ Dumping all cards from r/cahideas daily for use with [Cards Over LAN](https://gi
 
 To use:
 1. Download reddit-cah-ideas.json
-1. drop it into the packs directory in your Cards Over LAN directory
+1. Drop it into the packs directory in your Cards Over LAN directory
