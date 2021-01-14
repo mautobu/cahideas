@@ -103,3 +103,4 @@ rm -f cah*
 
 # rm some fucking broken cards
 sed -i '/Animaniacs/d' black.txt
+sed -i '/Super SubStacked B.M.T/d' black.txt
