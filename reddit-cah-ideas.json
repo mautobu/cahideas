@@ -86,7 +86,7 @@
 {"id": "b_77","content": {"en": "I’d like to be ______, in an octopus’s garden in the shade." }},
 {"id": "b_78","content": {"en": "Oops! All _____!" }},
 {"id": "b_79","content": {"en": "_____ is turning the frogs gay!" }},
-{"id": "b_80","content": {"en": "Rise up this mornin', Smile with the risin' sun, Three little birds, Pitch by my doorstep, Singin' sweet songs, Of melodies pure and true, Sayin', (\\\\\\\\\\\\\\\\\\\\\\"This is my message to you-ou-ou\\\\\\\\\\\\\\\\\\\\\\"). Singin': “Don't worry 'bout a thing, ‘Cause _____ is gonna be all right”." }},
+{"id": "b_80","content": {"en": "Rise up this mornin', Smile with the risin' sun, Three little birds, Pitch by my doorstep, Singin' sweet songs, Of melodies pure and true, Sayin', (“This is my message to you-ou-ou”). Singin': “Don't worry 'bout a thing, ‘Cause _____ is gonna be all right”." }},
 {"id": "b_81","content": {"en": "Excuse me? Which aisle at this Walmart can I find ______? Next to the ______ you say? Thanks!" }},
 {"id": "b_82","content": {"en": "What’s shoved up my ass?" }},
 {"id": "b_83","content": {"en": "I have the power of God and ______ on my side!" }},
@@ -1215,5 +1215,13 @@
 {"id": "w_1206","content": {"en": "Explaining how bicycles work" }},
 {"id": "w_1207","content": {"en": "Robbing black people for centuries" }},
 {"id": "w_1208","content": {"en": "A lamprey attaching itself to the end of my fork" }},
+{"id": "w_1209","content": {"en": "Voting for shitty candidates and expecting things to get less shitty" }},
+{"id": "w_1210","content": {"en": "Bernie's mittens" }},
+{"id": "w_1211","content": {"en": "title Bipedal alligators wearing trench coats and fedoras." }},
+{"id": "w_1212","content": {"en": "trapped in the basement of the Chrysler Building." }},
+{"id": "w_1213","content": {"en": "title Homoerotic turkeys in the shower." }},
+{"id": "w_1214","content": {"en": "A good flogging" }},
+{"id": "w_1215","content": {"en": "crying on a stainless steel toilet" }},
+{"id": "w_1216","content": {"en": "A skunk farm" }},
 {"id": "b_gitcommit","content": {"en": "My last Git commit message: \"Added _________.\""},}]}
 
