@@ -57,6 +57,12 @@ sed -i "s/\"/\“/g" cah-black.txt
 sed -i '/[W]/d' cah-black.txt
 sed -i '/[w]/d' cah-black.txt
 
+mv cah-white.txt cah-white-title.txt
+awk '{if($1=="title") $1="";print}' cah-white-title.txt > cah-white.txt
+
+mv cah-black.txt cah-black-title.txt
+awk '{if($1=="title") $1="";print}' cah-black-title.txt > cah-black.txt
+
 mv cah-black.txt cah-black-spaces.txt
 awk '$1=$1' FS='[_]*' OFS=_____ cah-black-spaces.txt > cah-black.txt
 
