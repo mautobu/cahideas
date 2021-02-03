@@ -93,13 +93,23 @@ cat << EOF >> reddit-cah-ideas.json
 EOF
 
 while read f; do
-echo "{\"id\": \"b_$a\",\"content\": {\"en\": \"${f}\" }}," >> reddit-cah-ideas.json
-a=`echo $(( $a + 1 ))`
+ if [[ `echo "$f" | sed 's/_____/_____\n/g' | grep -c "_____"` == 0 ]];then
+  echo "{\"id\": \"b_$a\",\"content\": {\"en\": \"${f}\" }}," >> reddit-cah-ideas.json
+ elif [[ `echo "$f" | sed 's/_____/_____\n/g' | grep -c "_____"` == 1 ]];then
+  echo "{\"id\": \"b_$a\",\"content\": {\"en\": \"${f}\" }}," >> reddit-cah-ideas.json
+ elif [[ `echo "$f" | sed 's/_____/_____\n/g' | grep -c "_____"` == 2 ]];then
+  echo "{\"id\": \"b_$a\",\"content\": {\"en\": \"${f}\" },"pick": 2}," >> reddit-cah-ideas.json
+ elif [[ `echo "$f" | sed 's/_____/_____\n/g' | grep -c "_____"` == 3 ]];then
+  echo "{\"id\": \"b_$a\",\"content\": {\"en\": \"${f}\" },"draw": 2,"pick" 3}," >> reddit-cah-ideas.json
+ else
+  echo "Excluding due to high answer requirements:  $f"
+ fi
+ a=`echo $(( $a + 1 ))`
 done < black.txt
 
 while read f; do
-echo "{\"id\": \"w_$a\",\"content\": {\"en\": \"${f}\" }}," >> reddit-cah-ideas.json
-a=`echo $(( $a + 1 ))`
+ echo "{\"id\": \"w_$a\",\"content\": {\"en\": \"${f}\" }}," >> reddit-cah-ideas.json
+ a=`echo $(( $a + 1 ))`
 done < white.txt
 
 
