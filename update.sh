@@ -93,7 +93,7 @@ cat << EOF >> reddit-cah-ideas.json
 EOF
 
 while read f; do
- if [[ `echo "$f" | sed 's/_____/_____\n/g' | grep -c "_____"` == 0 ]];then
+ if [[ `echo "$f" | sed 's/_____/_____\n/g' | grep -c "_____"` == 0 ]] && [[ $f == *? ]] ;then
   echo "{\"id\": \"b_$a\",\"content\": {\"en\": \"${f}\" }}," >> reddit-cah-ideas.json
  elif [[ `echo "$f" | sed 's/_____/_____\n/g' | grep -c "_____"` == 1 ]];then
   echo "{\"id\": \"b_$a\",\"content\": {\"en\": \"${f}\" }}," >> reddit-cah-ideas.json
@@ -102,7 +102,7 @@ while read f; do
  elif [[ `echo "$f" | sed 's/_____/_____\n/g' | grep -c "_____"` == 3 ]];then
   echo "{\"id\": \"b_$a\",\"content\": {\"en\": \"${f}\" }, \"draw\": 2 , \"pick\": 3 }," >> reddit-cah-ideas.json
  else
-  echo "Excluding due to high answer requirements:  $f"
+  echo "Excluding card:  $f"
  fi
  a=`echo $(( $a + 1 ))`
 done < black.txt
