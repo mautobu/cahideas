@@ -98,9 +98,9 @@ while read f; do
  elif [[ `echo "$f" | sed 's/_____/_____\n/g' | grep -c "_____"` == 1 ]];then
   echo "{\"id\": \"b_$a\",\"content\": {\"en\": \"${f}\" }}," >> reddit-cah-ideas.json
  elif [[ `echo "$f" | sed 's/_____/_____\n/g' | grep -c "_____"` == 2 ]];then
-  echo "{\"id\": \"b_$a\",\"content\": {\"en\": \"${f}\" },\"pick\": 2 }," >> reddit-cah-ideas.json
+  echo "{\"id\": \"b_$a\",\"content\": {\"en\": \"${f}\" }, \"pick\": 2 }," >> reddit-cah-ideas.json
  elif [[ `echo "$f" | sed 's/_____/_____\n/g' | grep -c "_____"` == 3 ]];then
-  echo "{\"id\": \"b_$a\",\"content\": {\"en\": \"${f}\" },\"draw\": 2,\"pick\" 3 }," >> reddit-cah-ideas.json
+  echo "{\"id\": \"b_$a\",\"content\": {\"en\": \"${f}\" }, \"draw\": 2 , \"pick\": 3 }," >> reddit-cah-ideas.json
  else
   echo "Excluding due to high answer requirements:  $f"
  fi
