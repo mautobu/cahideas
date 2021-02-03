@@ -4,6 +4,10 @@ wget -O cah-ugly-white.json 'https://www.reddit.com/r/cahideas/search.json?q=\[w
 wget -O cah-ugly-black.json 'https://www.reddit.com/r/cahideas/search.json?q=\[b\]&restrict_sr=true&limit=100'
 cat cah-ugly-white.json | python -m json.tool > cah-pretty-white.json
 cat cah-ugly-black.json | python -m json.tool > cah-pretty-black.json
+sed -i "s/\[\[/\[/g" cah-pretty-black.json
+sed -i "s/\[\[/\[/g" cah-pretty-white.json
+sed -i "s/\]\]/\]/g" cah-pretty-black.json
+sed -i "s/\]\]/\]/g" cah-pretty-white.json
 cat cah-pretty-white.json | grep \"title\" > cah-white-q.txt
 cat cah-pretty-black.json | grep \"title\" > cah-black-q.txt
 
@@ -27,7 +31,9 @@ sed -i "s/\"/\"/g" cah-white.txt
 sed -i "s/                    //g" cah-white.txt
 sed -i "s/title  //g" cah-white.txt
 sed -i "s/.$//" cah-white.txt
-sed -i "s/\"/\\\\\\\\\"/g" cah-white.txt
+sed -i "s/\"/\“/g" cah-white.txt
+sed -i '/[B]/d' cah-white.txt
+sed -i '/[b]/d' cah-white.txt
 
 
 sed -i "s/\://g" cah-black.txt
@@ -47,8 +53,12 @@ sed -i "s/\"/\"/g" cah-black.txt
 sed -i "s/                    //g" cah-black.txt
 sed -i "s/title  //g" cah-black.txt
 sed -i "s/.$//" cah-black.txt
-sed -i "s/\"/\\\\\\\\\"/g" cah-black.txt
+sed -i "s/\"/\“/g" cah-black.txt
+sed -i '/[W]/d' cah-black.txt
+sed -i '/[w]/d' cah-black.txt
 
+mv cah-black.txt cah-black-spaces.txt
+awk '$1=$1' FS='[_]*' OFS=_____ cah-black-spaces.txt > cah-black.txt
 
 while read f; do
  if [[ `cat white.txt | grep -c "$f"` > 0 ]];then
@@ -67,7 +77,6 @@ while read f; do
   echo "$f" >> black.txt
  fi
 done < cah-black.txt
-
 
 rm -f reddit-cah-ideas.json
 touch reddit-cah-ideas.json
@@ -95,12 +104,8 @@ done < white.txt
 
 
 cat << EOF >> reddit-cah-ideas.json
-{"id": "b_gitcommit","content": {"en": "My last Git commit message: \"Added _________.\""},}]}
+{"id": "b_gitcommit","content": {"en": "My last Git commit message: \"Added _____.\""},}]}
 
 EOF
 
 rm -f cah*
-
-# rm some fucking broken cards
-sed -i '/Animaniacs/d' black.txt
-sed -i '/Super SubStacked B.M.T/d' black.txt
